@@ -1,0 +1,37 @@
+POST http://127.0.0.1:8000/auth/users/
+Content-Type: application/json
+
+{
+    "username": "newuser1",
+    "password": "myPassword1",
+    "first_name": "",
+    "last_name": "",
+    "cats": []
+}
+
+###
+
+POST http://127.0.0.1:8000/auth/jwt/create/
+Content-Type: application/json
+
+{
+    "username": "newuser1",
+    "password": "myPassword1"
+}
+
+###
+
+GET http://127.0.0.1:8000/users/
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjg5NzczLCJqdGkiOiJkYmU1NGYxYzY5NjQ0N2Y5YmVkNTEwOWViODZiYjJkZSIsInVzZXJfaWQiOjF9.6pfXHKyaQUzXx0k4gWXErn5xmwYHEuJHvt9_qM7Ae8M
+
+###
+
+POST http://127.0.0.1:8000/cats/
+Content-Type: application/json
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzUxMjg5NzczLCJqdGkiOiJkYmU1NGYxYzY5NjQ0N2Y5YmVkNTEwOWViODZiYjJkZSIsInVzZXJfaWQiOjF9.6pfXHKyaQUzXx0k4gWXErn5xmwYHEuJHvt9_qM7Ae8M
+
+{
+    "name": "Барсик",
+    "color": "White",
+    "birth_year": 2020
+}
